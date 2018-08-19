@@ -1,4 +1,4 @@
-﻿namespace PrettyLogger
+﻿namespace PrettyLogger.Mock
 {
     public class MockLogFormatter : ILogFormatter
     {
