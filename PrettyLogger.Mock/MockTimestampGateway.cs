@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PrettyLogger
+namespace PrettyLogger.Mock
 {
     public class MockTimestampGateway : ITimestampGateway
     {

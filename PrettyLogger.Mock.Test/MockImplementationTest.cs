@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace PrettyLogger
+namespace PrettyLogger.Mock.Test
 {
     public class MockImplementationTest
     {
