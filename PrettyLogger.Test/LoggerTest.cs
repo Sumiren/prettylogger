@@ -24,7 +24,7 @@ namespace PrettyLogger.Test
             Assert.That(logger.WrittenLogs.Count, Is.EqualTo(1));
             var loggedArgument = ((IMockLog) logger.WrittenLogs.First()).LoggingArgument;
 
-            Assert.That(loggedArgument.LogType,         Is.EqualTo(LogType.Info));
+            Assert.That(loggedArgument.LogLevel,         Is.EqualTo(LogLevel.Info));
             Assert.That(loggedArgument.Timestamp.Value, Is.EqualTo(dateTime));
             Assert.That(loggedArgument.Message,         Is.EqualTo("aiueo"));
 

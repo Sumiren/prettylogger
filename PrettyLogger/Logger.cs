@@ -15,7 +15,7 @@
 
         public virtual void Info(string message)
         {
-            var log = _logFormatter.Format(new LoggingArgument(LogType.Info, new LazyTimestamp(_timestampGateway), message));
+            var log = _logFormatter.Format(new LoggingArgument(LogLevel.Info, new LazyTimestamp(_timestampGateway), message));
             Write(log);
         }
 

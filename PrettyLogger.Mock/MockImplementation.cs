@@ -12,5 +12,10 @@ namespace PrettyLogger.Mock
             Assert.That(Logs.Count,  Is.EqualTo(1));
             Assert.That(Logs.Last(), Is.EqualTo(expected));
         }
+
+        public void AssertNotLogged()
+        {
+            Assert.That(Logs.Count, Is.Zero);
+        }
     }
 }
