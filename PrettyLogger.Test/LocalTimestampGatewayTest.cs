@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace PrettyLogger
+namespace PrettyLogger.Test
 {
     public class LocalTimestampGatewayTest
     {
