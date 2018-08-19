@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using NUnit.Framework;
 
-namespace PrettyLogger
+namespace PrettyLogger.Mock
 {
     public class MockImplementation : InmemoryImplementation
     {

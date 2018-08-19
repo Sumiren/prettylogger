@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using NUnit.Framework;
+using PrettyLogger.Mock;
 
-namespace PrettyLogger
+namespace PrettyLogger.Test
 {
     public class LoggerTest
     {
