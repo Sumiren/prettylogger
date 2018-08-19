@@ -15,7 +15,7 @@ namespace PrettyLogger.Test
             var format         = new LogFormatter();
 
             var dateTime = DateTime.Parse("2018/1/2 01:02:03.456");
-            var log      = format.Format(new LoggingArgument(LogType.Info, new SimpleTimestamp(dateTime), "takanagohan"));
+            var log      = format.Format(new LoggingArgument(LogLevel.Info, new SimpleTimestamp(dateTime), "takanagohan"));
             log.WriteTo(implementation);
 
             var lastLogged = implementation.LastLogged;
@@ -61,7 +61,7 @@ namespace PrettyLogger.Test
             [Test]
             public void TestFormat_CallFormatInfoWhenInfo()
             {
-                Format(new LoggingArgument(LogType.Info, new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
+                Format(new LoggingArgument(LogLevel.Info, new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
                 Assert.That(FormatInfoHistory.Count,               Is.EqualTo(1));
                 Assert.That(FormatInfoHistory.First().Item1.Value, Is.EqualTo(new DateTime(2000, 1, 1)));
                 Assert.That(FormatInfoHistory.First().Item2,       Is.EqualTo("aiueo"));
