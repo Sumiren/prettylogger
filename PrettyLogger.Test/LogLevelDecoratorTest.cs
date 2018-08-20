@@ -6,10 +6,10 @@ namespace PrettyLogger.Test
 {
     public class LogLevelDecoratorTest
     {
+        LogLevelDecorator  _logLevelDecorator;
+        MockImplementation _mockImplementation;
         MockLogFormatter   _mockLogFormatter;
         SimpleTimestamp    _mockTimestamp;
-        MockImplementation _mockImplementation;
-        LogLevelDecorator  _logLevelDecorator;
 
 
         [SetUp]
@@ -40,7 +40,7 @@ namespace PrettyLogger.Test
         [Test]
         public void TestInfo_FilterWhenLevelIsLower()
         {
-            var log = _logLevelDecorator.Format(new LoggingArgument(LogLevel.Warning, _mockTimestamp, "aiueo"));
+            var log = _logLevelDecorator.Format(new LoggingArgument(LogLevel.Warn, _mockTimestamp, "aiueo"));
             log.WriteTo(_mockImplementation);
             _mockImplementation.AssertNotLogged();
         }
