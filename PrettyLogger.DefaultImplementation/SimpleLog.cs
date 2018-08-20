@@ -1,4 +1,6 @@
-﻿namespace PrettyLogger
+﻿using PrettyLogger.Abstraction;
+
+namespace PrettyLogger.DefaultImplementation
 {
     public class SimpleLog : ILog
     {

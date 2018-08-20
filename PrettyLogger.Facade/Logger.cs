@@ -1,4 +1,7 @@
-﻿namespace PrettyLogger
+﻿using PrettyLogger.Abstraction;
+using PrettyLogger.DefaultImplementation;
+
+namespace PrettyLogger.Facade
 {
     public class Logger : ILogger
     {

@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.10.1\build\NUnit.props')"/>
     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{41DFC05F-E4B6-485C-A877-2453C0456AA1}</ProjectGuid>
+        <ProjectGuid>{2F7AFC49-E76E-4919-B463-2E377A37A6A1}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>PrettyLogger.Mock</RootNamespace>
-        <AssemblyName>PrettyLogger.Mock</AssemblyName>
+        <RootNamespace>PrettyLogger.DefaultImplementation</RootNamespace>
+        <AssemblyName>PrettyLogger.DefaultImplementation</AssemblyName>
         <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -33,51 +32,35 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
-            <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
-            <Private>True</Private>
-        </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="IMockLog.cs"/>
-        <Compile Include="MockImplementation.cs"/>
-        <Compile Include="MockLogFormatter.cs"/>
-        <Compile Include="MockTimestampGateway.cs"/>
+        <Compile Include="InmemoryImplementation.cs"/>
+        <Compile Include="LazyTimestamp.cs"/>
+        <Compile Include="LocalTimestampGateway.cs"/>
+        <Compile Include="LogFormatter.cs"/>
+        <Compile Include="LogFormatterDecorator.cs"/>
+        <Compile Include="LogLevelDecorator.cs"/>
+        <Compile Include="NullLog.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="SimpleLog.cs"/>
+        <Compile Include="SimpleTimestamp.cs"/>
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\PrettyLogger.Abstraction\PrettyLogger.Abstraction.csproj">
             <Project>{0de5c5e8-5b42-41d6-8bba-e2e3b8809c38}</Project>
             <Name>PrettyLogger.Abstraction</Name>
         </ProjectReference>
-        <ProjectReference Include="..\PrettyLogger.DefaultImplementation\PrettyLogger.DefaultImplementation.csproj">
-            <Project>{2f7afc49-e76e-4919-b463-2e377a37a6a1}</Project>
-            <Name>PrettyLogger.DefaultImplementation</Name>
-        </ProjectReference>
-        <ProjectReference Include="..\PrettyLogger\PrettyLogger.csproj">
-            <Project>{aa66acfb-7bf9-47d1-9de0-89872d7c13d3}</Project>
-            <Name>PrettyLogger</Name>
-        </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="packages.config"/>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-        <PropertyGroup>
-            <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
-        </PropertyGroup>
-        <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))"/>
-    </Target>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-             Other similar extension points exist, see Microsoft.Common.targets.
-        <Target Name="BeforeBuild">
-        </Target>
-        <Target Name="AfterBuild">
-        </Target>
-        -->
+           Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+      -->
 </Project>

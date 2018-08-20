@@ -1,4 +1,6 @@
-﻿namespace PrettyLogger
+﻿using PrettyLogger.Abstraction;
+
+namespace PrettyLogger.DefaultImplementation
 {
     public abstract class LogFormatterDecorator : ILogFormatter
     {

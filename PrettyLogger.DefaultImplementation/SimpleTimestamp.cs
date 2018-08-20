@@ -1,6 +1,7 @@
 ﻿using System;
+using PrettyLogger.Abstraction;
 
-namespace PrettyLogger
+namespace PrettyLogger.DefaultImplementation
 {
     public class SimpleTimestamp : ITimestamp
     {

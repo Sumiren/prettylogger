@@ -1,4 +1,6 @@
-﻿namespace PrettyLogger.Mock
+﻿using PrettyLogger.Abstraction;
+
+namespace PrettyLogger.Mock
 {
     public interface IMockLog : ILog
     {
