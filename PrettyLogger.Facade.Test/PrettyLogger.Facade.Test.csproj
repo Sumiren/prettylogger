@@ -5,11 +5,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{41DFC05F-E4B6-485C-A877-2453C0456AA1}</ProjectGuid>
+        <ProjectGuid>{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B}</ProjectGuid>
+        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>PrettyLogger.Mock</RootNamespace>
-        <AssemblyName>PrettyLogger.Mock</AssemblyName>
+        <RootNamespace>PrettyLogger.Facade.Test</RootNamespace>
+        <AssemblyName>PrettyLogger.Facade.Test</AssemblyName>
         <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -43,10 +44,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="IMockLog.cs"/>
-        <Compile Include="MockImplementation.cs"/>
-        <Compile Include="MockLogFormatter.cs"/>
-        <Compile Include="MockTimestampGateway.cs"/>
+        <Compile Include="LoggerTest.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
@@ -57,6 +55,14 @@
         <ProjectReference Include="..\PrettyLogger.DefaultImplementation\PrettyLogger.DefaultImplementation.csproj">
             <Project>{2f7afc49-e76e-4919-b463-2e377a37a6a1}</Project>
             <Name>PrettyLogger.DefaultImplementation</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\PrettyLogger.Facade\PrettyLogger.Facade.csproj">
+            <Project>{0ad54e24-0052-40a2-99fc-f8e8e97d8f31}</Project>
+            <Name>PrettyLogger.Facade</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\PrettyLogger.Mock\PrettyLogger.Mock.csproj">
+            <Project>{41dfc05f-e4b6-485c-a877-2453c0456aa1}</Project>
+            <Name>PrettyLogger.Mock</Name>
         </ProjectReference>
     </ItemGroup>
     <ItemGroup>
@@ -70,10 +76,10 @@
         <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))"/>
     </Target>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-               Other similar extension points exist, see Microsoft.Common.targets.
-          <Target Name="BeforeBuild">
-          </Target>
-          <Target Name="AfterBuild">
-          </Target>
-          -->
+           Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+      -->
 </Project>
