@@ -1,4 +1,5 @@
 ﻿using System;
+using PrettyLogger.Abstraction;
 
 namespace PrettyLogger.Mock
 {
