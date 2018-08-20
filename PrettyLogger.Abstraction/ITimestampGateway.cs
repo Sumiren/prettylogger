@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PrettyLogger
+namespace PrettyLogger.Abstraction
 {
     public interface ITimestampGateway
     {

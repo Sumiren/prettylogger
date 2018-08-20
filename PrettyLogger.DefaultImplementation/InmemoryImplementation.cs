@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using PrettyLogger.Abstraction;
 
-namespace PrettyLogger
+namespace PrettyLogger.DefaultImplementation
 {
     public class InmemoryImplementation : ILoggerImplementation
     {

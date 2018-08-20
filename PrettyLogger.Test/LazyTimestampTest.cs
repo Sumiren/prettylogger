@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using PrettyLogger.DefaultImplementation;
 using PrettyLogger.Mock;
 
 namespace PrettyLogger.Test

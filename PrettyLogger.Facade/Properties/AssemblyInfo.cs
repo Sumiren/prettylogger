@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("hitsumabushi")]
+[assembly: AssemblyTitle("PrettyLogger.Facade")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("hitsumabushi")]
+[assembly: AssemblyProduct("PrettyLogger.Facade")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("AA66ACFB-7BF9-47D1-9DE0-89872D7C13D3")]
+[assembly: Guid("0AD54E24-0052-40A2-99FC-F8E8E97D8F31")]
 
 // Version information for an assembly consists of the following four values:
 //

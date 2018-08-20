@@ -1,4 +1,4 @@
-﻿namespace PrettyLogger
+﻿namespace PrettyLogger.Facade
 {
     public interface ILogger
     {

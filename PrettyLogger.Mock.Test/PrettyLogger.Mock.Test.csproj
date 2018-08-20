@@ -50,13 +50,17 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
+        <ProjectReference Include="..\PrettyLogger.Abstraction\PrettyLogger.Abstraction.csproj">
+            <Project>{0de5c5e8-5b42-41d6-8bba-e2e3b8809c38}</Project>
+            <Name>PrettyLogger.Abstraction</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\PrettyLogger.DefaultImplementation\PrettyLogger.DefaultImplementation.csproj">
+            <Project>{2f7afc49-e76e-4919-b463-2e377a37a6a1}</Project>
+            <Name>PrettyLogger.DefaultImplementation</Name>
+        </ProjectReference>
         <ProjectReference Include="..\PrettyLogger.Mock\PrettyLogger.Mock.csproj">
             <Project>{41dfc05f-e4b6-485c-a877-2453c0456aa1}</Project>
             <Name>PrettyLogger.Mock</Name>
-        </ProjectReference>
-        <ProjectReference Include="..\PrettyLogger\PrettyLogger.csproj">
-            <Project>{aa66acfb-7bf9-47d1-9de0-89872d7c13d3}</Project>
-            <Name>PrettyLogger</Name>
         </ProjectReference>
     </ItemGroup>
     <ItemGroup>
@@ -70,10 +74,10 @@
         <Error Condition="!Exists('..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.10.1\build\NUnit.props'))"/>
     </Target>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-             Other similar extension points exist, see Microsoft.Common.targets.
-        <Target Name="BeforeBuild">
-        </Target>
-        <Target Name="AfterBuild">
-        </Target>
-        -->
+               Other similar extension points exist, see Microsoft.Common.targets.
+          <Target Name="BeforeBuild">
+          </Target>
+          <Target Name="AfterBuild">
+          </Target>
+          -->
 </Project>
