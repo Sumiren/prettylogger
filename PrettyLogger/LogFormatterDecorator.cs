@@ -2,12 +2,12 @@
 {
     public abstract class LogFormatterDecorator : ILogFormatter
     {
-        public ILogFormatter Decorated { get; }
-
         public LogFormatterDecorator(ILogFormatter decorated)
         {
             Decorated = decorated;
         }
+
+        public ILogFormatter Decorated { get; }
 
         public abstract ILog Format(LoggingArgument loggingArgument);
     }

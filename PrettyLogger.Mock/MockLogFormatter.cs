@@ -1,10 +1,16 @@
-﻿namespace PrettyLogger.Mock
+﻿using System.Collections.Generic;
+
+namespace PrettyLogger.Mock
 {
     public class MockLogFormatter : ILogFormatter
     {
+        public List<IMockLog> FormattedLogs { get; } = new List<IMockLog>();
+
         public ILog Format(LoggingArgument loggingArgument)
         {
-            return new InnerMockLog(loggingArgument);
+            var mockLog = new InnerMockLog(loggingArgument);
+            FormattedLogs.Add(mockLog);
+            return mockLog;
         }
 
         sealed class InnerMockLog : IMockLog
