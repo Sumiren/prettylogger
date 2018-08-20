@@ -2,10 +2,9 @@
 using System.Linq;
 using NUnit.Framework;
 using PrettyLogger.Abstraction;
-using PrettyLogger.Facade;
 using PrettyLogger.Mock;
 
-namespace PrettyLogger.Test
+namespace PrettyLogger.Facade.Test
 {
     public class LoggerTest
     {

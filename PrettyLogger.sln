@@ -16,7 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyLogger.Facade", "Pret
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyLogger.DefaultImplementation", "PrettyLogger.DefaultImplementation\PrettyLogger.DefaultImplementation.csproj", "{2F7AFC49-E76E-4919-B463-2E377A37A6A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyLogger.Test", "PrettyLogger.Test\PrettyLogger.Test.csproj", "{A83861BA-8A69-4607-83A3-AF689FB6AF55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyLogger.DefaultImplementation.Test", "PrettyLogger.DefaultImplementation.Test\PrettyLogger.DefaultImplementation.Test.csproj", "{A83861BA-8A69-4607-83A3-AF689FB6AF55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrettyLogger.Facade.Test", "PrettyLogger.Facade.Test\PrettyLogger.Facade.Test.csproj", "{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{A83861BA-8A69-4607-83A3-AF689FB6AF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A83861BA-8A69-4607-83A3-AF689FB6AF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A83861BA-8A69-4607-83A3-AF689FB6AF55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{41DFC05F-E4B6-485C-A877-2453C0456AA1} = {98C7A69F-B5A2-4F40-AAF7-886CDC13399F}
@@ -56,5 +62,6 @@ Global
 		{0AD54E24-0052-40A2-99FC-F8E8E97D8F31} = {04A2EC88-0307-48F5-99BA-E9E0B6EBA1D3}
 		{2F7AFC49-E76E-4919-B463-2E377A37A6A1} = {04A2EC88-0307-48F5-99BA-E9E0B6EBA1D3}
 		{A83861BA-8A69-4607-83A3-AF689FB6AF55} = {F287B5BD-4AAD-496C-94D4-F7DBD006D62E}
+		{C9B9902B-E1AA-4FF1-BA38-14772D4E7C7B} = {F287B5BD-4AAD-496C-94D4-F7DBD006D62E}
 	EndGlobalSection
 EndGlobal

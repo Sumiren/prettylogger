@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 using NUnit.Framework;
-using PrettyLogger.DefaultImplementation;
 
-namespace PrettyLogger.Test
+namespace PrettyLogger.DefaultImplementation.Test
 {
     public class InmemoryImplementationTest
     {

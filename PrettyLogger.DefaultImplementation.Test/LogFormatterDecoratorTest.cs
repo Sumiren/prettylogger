@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
 using PrettyLogger.Abstraction;
-using PrettyLogger.DefaultImplementation;
 
-namespace PrettyLogger.Test
+namespace PrettyLogger.DefaultImplementation.Test
 {
     public class LogFormatterDecoratorTest
     {

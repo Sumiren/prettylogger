@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using PrettyLogger.Abstraction;
-using PrettyLogger.DefaultImplementation;
 using PrettyLogger.Mock;
 
-namespace PrettyLogger.Test
+namespace PrettyLogger.DefaultImplementation.Test
 {
     public class LogFormatterTest
     {

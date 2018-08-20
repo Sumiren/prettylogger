@@ -1,10 +1,9 @@
 ﻿using System;
 using NUnit.Framework;
 using PrettyLogger.Abstraction;
-using PrettyLogger.DefaultImplementation;
 using PrettyLogger.Mock;
 
-namespace PrettyLogger.Test
+namespace PrettyLogger.DefaultImplementation.Test
 {
     public class LogLevelDecoratorTest
     {
