@@ -25,7 +25,7 @@ namespace PrettyLogger.DefaultImplementation
                     return FormatTrace(timestamp, message);
 
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(loggingArgument.LogLevel));
             }
         }
 

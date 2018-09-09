@@ -13,6 +13,14 @@ namespace PrettyLogger.DefaultImplementation.Test
             Assert.That(logFormatterDecoratorTester.Decorated, Is.EqualTo(decorated));
         }
 
+        [Test]
+        public void InnerTest_TestersAreSane()
+        {
+            // I wanted to avoid being confused that coverage is 99%
+            Assert.That(new SomeLogFormatter().Format(null), Is.Null);
+            Assert.That(new LogFormatterDecoratorTester(new SomeLogFormatter()).Format(null), Is.Null);
+        }
+
         class SomeLogFormatter : ILogFormatter
         {
             public ILog Format(LoggingArgument loggingArgument)

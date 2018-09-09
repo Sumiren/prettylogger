@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
@@ -55,6 +55,13 @@ namespace PrettyLogger.DefaultImplementation.Test
             log.WriteTo(_mockImplementation);
 
             AssertCorrectlyFormatted("TRACE");
+        }
+
+        [Test]
+        public void TestFormat_InputError()
+        {
+            var argumentOutOfRangeException = Assert.Throws<ArgumentOutOfRangeException>(() => _logFormatter.Format(new LoggingArgument((LogLevel) (-1), new SimpleTimestamp(_datetime), "takanagohan")));
+            Assert.That(argumentOutOfRangeException.ParamName, Is.EqualTo("LogLevel"));
         }
 
         void AssertCorrectlyFormatted(string logLevelLabel)
