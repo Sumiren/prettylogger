@@ -5,6 +5,7 @@
         static readonly object Locker = new object();
 
         static LoggerBuilderFactory _instance;
+
         public static LoggerBuilderFactory Instance
         {
             get
@@ -19,9 +20,14 @@
             }
         }
 
-        public LoggerBuilder CreateLoggerBuilder()
+        public RawLoggerBuilder CreateRawLoggerBuilder()
         {
-            return new LoggerBuilder();
+            return new RawLoggerBuilder();
+        }
+
+        public ILoggerBuilderAcceptingLogFormatter CreateLoggerBuilder()
+        {
+            return new LoggerBuilderWorkflowAdapter();
         }
     }
 }

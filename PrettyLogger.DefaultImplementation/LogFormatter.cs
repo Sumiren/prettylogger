@@ -8,8 +8,8 @@ namespace PrettyLogger.DefaultImplementation
         public ILog Format(LoggingArgument loggingArgument)
         {
             var timestamp = loggingArgument.Timestamp;
-            var message = loggingArgument.Message;
-            
+            var message   = loggingArgument.Message;
+
             switch (loggingArgument.LogLevel)
             {
                 case LogLevel.Error:

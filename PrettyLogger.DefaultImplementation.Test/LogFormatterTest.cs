@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
@@ -9,9 +9,9 @@ namespace PrettyLogger.DefaultImplementation.Test
 {
     public class LogFormatterTest
     {
-        MockImplementation _mockImplementation;
-        LogFormatter       _logFormatter;
         DateTime           _datetime;
+        LogFormatter       _logFormatter;
+        MockImplementation _mockImplementation;
 
         [SetUp]
         public void SetUp()
@@ -60,7 +60,9 @@ namespace PrettyLogger.DefaultImplementation.Test
         [Test]
         public void TestFormat_InputError()
         {
-            var argumentOutOfRangeException = Assert.Throws<ArgumentOutOfRangeException>(() => _logFormatter.Format(new LoggingArgument((LogLevel) (-1), new SimpleTimestamp(_datetime), "takanagohan")));
+            var argumentOutOfRangeException =
+                    Assert.Throws<ArgumentOutOfRangeException>(
+                            () => _logFormatter.Format(new LoggingArgument((LogLevel) (-1), new SimpleTimestamp(_datetime), "takanagohan")));
             Assert.That(argumentOutOfRangeException.ParamName, Is.EqualTo("LogLevel"));
         }
 
@@ -88,10 +90,10 @@ namespace PrettyLogger.DefaultImplementation.Test
 
         class LogFormatterTester : LogFormatter
         {
-            List<Tuple<ITimestamp, string>> FormatInfoHistory { get; } = new List<Tuple<ITimestamp, string>>();
-            List<Tuple<ITimestamp, string>> FormatTraceHistory { get; } = new List<Tuple<ITimestamp, string>>();
-            List<Tuple<ITimestamp, string>> FormatErrorHistory { get; } = new List<Tuple<ITimestamp, string>>();
-            List<Tuple<ITimestamp, string>> FormatWarnHistory { get; } = new List<Tuple<ITimestamp, string>>();
+            List<Tuple<ITimestamp, string>>         FormatInfoHistory  { get; } = new List<Tuple<ITimestamp, string>>();
+            List<Tuple<ITimestamp, string>>         FormatTraceHistory { get; } = new List<Tuple<ITimestamp, string>>();
+            List<Tuple<ITimestamp, string>>         FormatErrorHistory { get; } = new List<Tuple<ITimestamp, string>>();
+            List<Tuple<ITimestamp, string>>         FormatWarnHistory  { get; } = new List<Tuple<ITimestamp, string>>();
             List<Tuple<string, ITimestamp, string>> InnerFormatHistory { get; } = new List<Tuple<string, ITimestamp, string>>();
 
             [SetUp]
@@ -103,7 +105,7 @@ namespace PrettyLogger.DefaultImplementation.Test
                 FormatTraceHistory.Clear();
                 InnerFormatHistory.Clear();
             }
-            
+
             [Test]
             public void TestFormat_CallFormatErrorWhenError()
             {
@@ -165,7 +167,7 @@ namespace PrettyLogger.DefaultImplementation.Test
             void AssertFormatCallsCorrespondingHook(LogLevel logLevel, List<Tuple<ITimestamp, string>> operationHistory)
             {
                 Format(new LoggingArgument(logLevel, new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
-                Assert.That(operationHistory.Count,                 Is.EqualTo(1));
+                Assert.That(operationHistory.Count,               Is.EqualTo(1));
                 Assert.That(operationHistory.First().Item1.Value, Is.EqualTo(new DateTime(2000, 1, 1)));
                 Assert.That(operationHistory.First().Item2,       Is.EqualTo("aiueo"));
             }

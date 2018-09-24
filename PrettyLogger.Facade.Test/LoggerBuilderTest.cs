@@ -13,7 +13,7 @@ namespace PrettyLogger.Facade.Test
         public void TestSetFormatStrategy()
         {
             var logFormatter = new MockLogFormatter();
-            var builder      = new LoggerBuilder();
+            var builder      = new RawLoggerBuilder();
             var newBuilder   = builder.SetLogFormatter(logFormatter);
             Assert.That(builder,                       Is.Not.EqualTo(newBuilder));
             Assert.That(newBuilder.StoredLogFormatter, Is.EqualTo(logFormatter));
@@ -24,7 +24,7 @@ namespace PrettyLogger.Facade.Test
         public void TestSetLoggerImplementation()
         {
             var loggerImplementation = new MockImplementation();
-            var builder              = new LoggerBuilder();
+            var builder              = new RawLoggerBuilder();
             var newBuilder           = builder.SetLogFormatter(new LogFormatter()).SetLoggerImplementation(loggerImplementation);
             Assert.That(builder,                               Is.Not.EqualTo(newBuilder));
             Assert.That(newBuilder.StoredLoggerImplementation, Is.EqualTo(loggerImplementation));
@@ -36,7 +36,7 @@ namespace PrettyLogger.Facade.Test
         public void TestSetTimestampGateway()
         {
             var mockTimestampGateway = new MockTimestampGateway();
-            var builder              = new LoggerBuilder();
+            var builder              = new RawLoggerBuilder();
             var newBuilder           = builder.SetLoggerImplementation(new MockImplementation()).SetTimestampGateway(mockTimestampGateway);
             Assert.That(builder,                               Is.Not.EqualTo(newBuilder));
             Assert.That(newBuilder.StoredTimestampGateway,     Is.EqualTo(mockTimestampGateway));
@@ -47,20 +47,20 @@ namespace PrettyLogger.Facade.Test
         [Test]
         public void TestBuildUp()
         {
-            var loggerBuilder = new LoggerBuilder();
-            TestSimpleBuilder(loggerBuilder);
+            var loggerBuilder = new RawLoggerBuilder();
+            AssertCanBuildUpCorrectly(loggerBuilder);
         }
 
-        public static void TestSimpleBuilder(LoggerBuilder loggerBuilder)
+        public static void AssertCanBuildUpCorrectly(RawLoggerBuilder rawLoggerBuilder)
         {
             var dateTime             = new DateTime(2000, 1, 1);
             var mockLogFormatter     = new MockLogFormatter();
             var mockImplementation   = new MockImplementation();
             var mockTimestampGateway = new MockTimestampGateway(dateTime);
-            var logger = loggerBuilder.SetLogFormatter(mockLogFormatter)
-                                      .SetLoggerImplementation(mockImplementation)
-                                      .SetTimestampGateway(mockTimestampGateway)
-                                      .BuildUp();
+            var logger = rawLoggerBuilder.SetLogFormatter(mockLogFormatter)
+                                         .SetLoggerImplementation(mockImplementation)
+                                         .SetTimestampGateway(mockTimestampGateway)
+                                         .BuildUp();
 
             logger.Info("aiueo");
 

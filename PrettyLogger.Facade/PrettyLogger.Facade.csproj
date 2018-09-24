@@ -1,61 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{0AD54E24-0052-40A2-99FC-F8E8E97D8F31}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>PrettyLogger.Facade</RootNamespace>
-        <AssemblyName>PrettyLogger.Facade</AssemblyName>
-        <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Data"/>
-        <Reference Include="System.Xml"/>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="ILogger.cs"/>
-        <Compile Include="Logger.cs"/>
-        <Compile Include="LoggerBuilder.cs"/>
-        <Compile Include="LoggerBuilderFactory.cs"/>
-        <Compile Include="Properties\AssemblyInfo.cs"/>
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\PrettyLogger.Abstraction\PrettyLogger.Abstraction.csproj">
-            <Project>{0de5c5e8-5b42-41d6-8bba-e2e3b8809c38}</Project>
-            <Name>PrettyLogger.Abstraction</Name>
-        </ProjectReference>
-        <ProjectReference Include="..\PrettyLogger.DefaultImplementation\PrettyLogger.DefaultImplementation.csproj">
-            <Project>{2f7afc49-e76e-4919-b463-2e377a37a6a1}</Project>
-            <Name>PrettyLogger.DefaultImplementation</Name>
-        </ProjectReference>
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AD54E24-0052-40A2-99FC-F8E8E97D8F31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrettyLogger.Facade</RootNamespace>
+    <AssemblyName>PrettyLogger.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ICompleteLoggerBuilder.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="ILoggerBuilderAcceptingLogFormatter.cs" />
+    <Compile Include="ILoggerBuilderAcceptingLoggerImplementation.cs" />
+    <Compile Include="ILoggerBuilderAcceptingTimestampGateway.cs" />
+    <Compile Include="ILoggerBuilderHavingLogFormatter.cs" />
+    <Compile Include="ILoggerBuilderHavingLoggerImplementation.cs" />
+    <Compile Include="ILoggerBuilderHavingTimestampGateway.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoggerBuilderWorkflowAdapter.cs" />
+    <Compile Include="RawLoggerBuilder.cs" />
+    <Compile Include="LoggerBuilderFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PrettyLogger.Abstraction\PrettyLogger.Abstraction.csproj">
+      <Project>{0de5c5e8-5b42-41d6-8bba-e2e3b8809c38}</Project>
+      <Name>PrettyLogger.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrettyLogger.DefaultImplementation\PrettyLogger.DefaultImplementation.csproj">
+      <Project>{2f7afc49-e76e-4919-b463-2e377a37a6a1}</Project>
+      <Name>PrettyLogger.DefaultImplementation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
              Other similar extension points exist, see Microsoft.Common.targets.
         <Target Name="BeforeBuild">
         </Target>

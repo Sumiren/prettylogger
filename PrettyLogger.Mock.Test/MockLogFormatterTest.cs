@@ -27,11 +27,11 @@ namespace PrettyLogger.Mock.Test
         public void TestFormattedLogs()
         {
             var formatter = new MockLogFormatter();
-            var first = formatter.Format(new LoggingArgument(LogLevel.Info, new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
-            var last = formatter.Format(new LoggingArgument(LogLevel.Error, new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
-            Assert.That(formatter.FormattedLogs.Count, Is.EqualTo(2));
+            var first     = formatter.Format(new LoggingArgument(LogLevel.Info,  new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
+            var last      = formatter.Format(new LoggingArgument(LogLevel.Error, new SimpleTimestamp(new DateTime(2000, 1, 1)), "aiueo"));
+            Assert.That(formatter.FormattedLogs.Count,   Is.EqualTo(2));
             Assert.That(formatter.FormattedLogs.First(), Is.EqualTo(first));
-            Assert.That(formatter.FormattedLogs.Last(), Is.EqualTo(last));
+            Assert.That(formatter.FormattedLogs.Last(),  Is.EqualTo(last));
         }
     }
 }

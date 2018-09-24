@@ -3,31 +3,31 @@ using PrettyLogger.Abstraction;
 
 namespace PrettyLogger.Facade
 {
-    public class LoggerBuilder
+    public class RawLoggerBuilder
     {
         public ILogFormatter         StoredLogFormatter         { get; private set; }
         public ILoggerImplementation StoredLoggerImplementation { get; private set; }
         public ITimestampGateway     StoredTimestampGateway     { get; private set; }
 
 
-        public LoggerBuilder SetLogFormatter(ILogFormatter logFormatter)
+        public RawLoggerBuilder SetLogFormatter(ILogFormatter logFormatter)
         {
             return Clone(builder => builder.StoredLogFormatter = logFormatter);
         }
 
-        public LoggerBuilder SetLoggerImplementation(ILoggerImplementation loggerImplementation)
+        public RawLoggerBuilder SetLoggerImplementation(ILoggerImplementation loggerImplementation)
         {
             return Clone(builder => builder.StoredLoggerImplementation = loggerImplementation);
         }
 
-        public LoggerBuilder SetTimestampGateway(ITimestampGateway timestampGateway)
+        public RawLoggerBuilder SetTimestampGateway(ITimestampGateway timestampGateway)
         {
             return Clone(builder => builder.StoredTimestampGateway = timestampGateway);
         }
 
-        LoggerBuilder Clone(Action<LoggerBuilder> tune)
+        RawLoggerBuilder Clone(Action<RawLoggerBuilder> tune)
         {
-            var loggerBuilder = new LoggerBuilder
+            var loggerBuilder = new RawLoggerBuilder
             {
                     StoredLogFormatter         = StoredLogFormatter,
                     StoredLoggerImplementation = StoredLoggerImplementation,
